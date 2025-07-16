@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mocha Tests</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mocha/mocha.css">
+</head>
+
+<body>
+<div id="mocha"></div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/expect.js@0.3.1/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chai@4.3.7/chai.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mocha/mocha.js"></script>
+
+<script src="solution.js"></script>
+
+<script>
+	mocha.setup('bdd');
+	const expect = chai.expect;
+</script>
+
+
+<script type="module" src="main.test.js"></script>
+
+
+<!-- <script src="https://comp1235.gblearn.com/common/W202X/test.js"></script> -->
+
+<script>
+	mocha.checkLeaks();
+	mocha.run();
+</script>
+</body>
+</html>

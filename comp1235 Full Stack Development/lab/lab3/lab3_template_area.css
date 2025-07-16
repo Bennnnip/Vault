@@ -1,0 +1,73 @@
+/*
+Css Properties for grid containers
+---------------------------------------------
+display : grid;
+grid-templateL:
+    grid-template-rows
+    grid-template-columns
+grid-gap:
+justify-content:                this work on horizontal spacing if an item in horizontal spacing
+justify-items:                  this work on horizontal spacing
+align-content:                  this work on vertical spacing if an item in vertical spacing
+align-items:                    this work on vertical spacing
+
+
+
+
+CSS properties for grid items
+---------------------------------------------
+justify-self                    this work on horizontal spacing
+for a single item
+align-self                      this work on vertical spacing if an item in vertical spacing
+for a single item
+
+CSS Functions
+---------------------------------------------
+repeat (time repeat, size)
+minmax (minimum, maximum)
+CSS directives
+---------------------------------------------
+
+@media
+@import
+ */
+body {
+    border: 1px solid black;
+}
+main {
+    border: 1px solid blue;
+    display: grid; /* this put into grid container*/
+    grid-template: repeat(3, min(150px, 200px))/ 250px 200px;
+    grid-gap: 15px 30px;
+    /*justify-items: center;*/ /* this works on horizontal spacing if the content is horizontal */
+    justify-content: center; /* This works on horizontal spacing */
+    /*align-content: center;*/ /* /* this work on vertical spacing */
+    align-items: center; /* this work on vertical spacing if the content is vertical*/
+    grid-template-areas:
+    "section1 section1
+    "section2 section2
+    "section3";
+}
+section {
+    border: 1px solid red;
+    background-color: gray;
+}
+article {
+    border : 1px solid purple;
+}
+p {
+    border : 1px solid green;
+}
+#top {
+    align-self: start;
+}
+@media only screen and (max-width : 640px) {
+    body {
+        background-color: lightblue;
+    }
+}
+@media only screen and (max-width : 400px) {
+    body {
+        background-color: yellow;
+    }
+}

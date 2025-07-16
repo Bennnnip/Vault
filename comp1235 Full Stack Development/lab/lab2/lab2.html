@@ -1,0 +1,64 @@
+<!-- Purpose
+-----------------------------------------------------------------------------------------------------------
+  - flexbox
+  - Css element is flexbox
+  - flex Direction row (left to right) , row-reverse, Column (top-bottom), Column-reverse
+    Note For Flex Direction row is default
+  - flex wrap flex item will all try to fit onto one line and the least will go to new line
+  - flex flow = shorthand of flex-direction and flex-wrap properties
+    flex-flow: column wrap;
+  - justify-Content way to manage container not content > space evenly
+  - align-items we gonna use stretch but often we gonna use center
+------------------------------------------------------------------------------------------------------------
+- CSS Properties for For Flex-Items
+  - Order by default are laid out in the source order default = 0 in the middle
+  - flex row & flex shrink default value : 0, 1 way to rememeber is that grow are the one we use shrink is
+    secondary
+  - flex basis default size of an element before remaining space is distributed.
+  - align-self ** will come up on an exam ** specified alignment by items
+    if use align-self is overridden and float clear and vertical align have no effect on a flex item
+------------------------------------------------------------------------------------------------------------
+-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <!-- External Javascript setup -->
+<title>Document</title>
+<link rel="stylesheet" href="lab2.css"> <!-- This is external style sheet link -->
+</head>
+<body>
+<header>
+  <nav>
+    <a Class="profileA" href="https://www.google.com/">Profile</a>
+    <a id="billinga" href="https://www.google.com/">billinga</a>
+    <a href="https://www.google.com/">Sign-out</a>
+    <a href="https://www.google.com/">billing</a>
+    <a href="https://www.google.com/">billing</a>
+    <a href="https://www.google.com/">billing</a>
+    <a href="https://www.google.com/">billing</a>
+  </nav>
+</header>
+<main>
+  <section>
+    <article>Article 1</article>
+    <article>Article 2</article>
+    <article>Article 3</article>
+  </section>
+  <section>
+    <article>Article 1</article>
+    <article>Article 2</article>
+    <article>Article 3</article>
+  </section>
+</main>
+<aside>
+  this is some content not directly related to main contents it will show side of page
+</aside>
+<footer>
+  Copyright by Vissarut(Ben) Promkaew
+</footer>
+</body>
+</html>

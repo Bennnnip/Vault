@@ -1,0 +1,52 @@
+main {
+    height: 588px;
+    border: 1px solid blue;
+    display: grid;
+    grid-template:
+    [para1-start] 200px
+    [para2-3-start] 200px
+    [para4-5-start] 200px
+    [all-rows-end]
+    /
+    [para1-2-4-col-start] 250px
+    [para3-5-col-start] 250px
+    [cols-end];
+    grid-gap: 10px 30px;
+
+    /* Justify items: horizontal spacing if content is smaller than grid item */
+    justify-content: center;
+    align-content: center; /* vertical spacing */
+    align-items: center;   /* vertical spacing if content is smaller than grid item */
+}
+
+section {
+    border: 1px solid red;
+    background-color: grey;
+}
+
+article {
+    border: 1px solid green;
+}
+
+p {
+    border: 1px solid purple;
+}
+
+#top {
+    justify-self: start;
+    align-self: start;
+    grid-row: para1-start / para2-3-start;
+    grid-column: para1-2-4-col-start / cols-end;
+}
+
+@media only screen and (max-width: 640px) {
+    main {
+        background-color: cadetblue;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    main {
+        background-color: aquamarine;
+    }
+}

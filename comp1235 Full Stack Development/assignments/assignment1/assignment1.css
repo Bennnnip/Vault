@@ -1,0 +1,225 @@
+/* embedded font from GG font */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
+/* header elements */
+* { /* reset default margin and padding of the whole html and set up border-box */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header {
+    display: flex; /* lay out header elements to show in a row */
+    font-family: 'Bebas Neue', cursive; /* front family for header */
+}
+nav {
+    width: 100%; /* span nav full of the page */
+    height: 100%; /* height to fit content */
+    margin: 0 auto 20px auto;
+    border: 2px solid #183B4E;
+    padding: 20px 20px 20px 20px;
+    font-size: 40px;
+    font-family: 'Bebas Neue', cursive;
+    background-color: #183B4E;
+}
+#nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none; /* remove bullet */
+    padding: 20px 20px 20px 20px;
+    height: 40px;
+    width: 100%;
+}
+#home{
+    margin-right: auto;
+}
+#nav-links > li:not(:first-child) {
+    margin-left: 25px;
+}
+#nav-links a {
+    text-decoration: #eeeeee; /* color link url to white */
+    color: #eeeeee;
+    padding: 20px 20px;
+}
+#nav-links a:hover {
+    background: #27548A;
+}
+/* Course content Grid */
+#course-grid {
+    width: 100%; /* span grid across the width */
+    display: grid; /* layout grid */
+    grid-template-columns: 1fr 1fr 1fr; /* Grid will layout in 3 column each column 1 fr */
+    grid-template-rows: 100px auto; /* Title row 100px the rest of grid auto */
+    gap: 15px 10px; /* gap row, column */
+    box-sizing: border-box;
+    margin: 0 auto;
+    color: #eeeeee;
+}
+#page_title {
+   grid-column: 1 / 4; /* lay out title to be middle of the grid */
+   text-align: center;
+   align-self: center;
+   color: #eeeeee;
+}
+.course_item {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* set column of grid in each item * 1 for img 2 for text */
+    grid-template-rows: 1fr 1fr 4fr; /* set how grid item row will span 1 for img + course code, 1 for img + course title
+    + 4 for img + course info */
+    grid-template-areas: /* determined grid area */
+    "image number"
+    "image title"
+    "image description"
+;
+    align-items: start;
+    min-height: 220px;
+    max-width: 320px;
+    height: auto;
+    column-gap: 5px;
+}
+.course_image{
+    grid-area: image; /* assign area to each class*/
+    object-fit: cover;
+    width: 125px;
+    max-width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
+
+}
+.course_number{
+    grid-area: number; /* assign area to each class*/
+    align-self: start;
+}
+.course_title {
+    grid-area: title; /* assign area to each class*/
+    justify-self: start;
+    align-self: start;
+}
+.course_description{
+    grid-area: description; /* assign area to each class*/
+    height: 100%;
+    overflow: hidden; /* to hide the content that overflow grid */
+    text-overflow: ellipsis; /* when text overflow of grid and hidden it will show ... */
+    justify-content: flex-end;
+    font-size: 15px;
+    line-clamp: 14; /* to limit number of line of text that show in an elements */
+    overflow-y: auto; /*use to ensure a scroll bar for hidden content learning from web3school*/
+    margin-top: 0; /* delete margin on top of course_description grid */
+    padding: 0;
+}
+body {
+    font-family: 'DM Serif Text', serif;
+    font-weight: normal;
+    background-color: #DDA853;
+    min-height: 100vh; /* determined the minimum height of body content */
+    display: flex; /* layout body content in row */
+    flex-direction: column;
+}
+main {
+    flex: 1;
+}
+/* footer part */
+footer {
+    display: flex; /*lay out footer elements in row */
+    width: 100%; /* Span footer elements full of the page width */
+    box-sizing: border-box;
+    border : 2px solid #183B4E;
+    background-color: #183B4E;
+    margin: 20px auto 0 auto;
+    font-family: 'Bebas Neue', rajdhani, sans-serif; /*set front that import from GG fonts */
+    font-size: 40px;
+    color: #eeeeee;
+}
+footer a {
+    color: #eeeeee; /* change color of link in footer to white */
+}
+#footer-items {
+    display: flex;
+    width: 100%;
+    list-style: none; /* delete bullet of list item */
+    padding: 0;
+    margin: 0;
+}
+#footer-items > li {
+    flex: 1;
+    text-align: center;
+}
+
+#footer-items > li:first-child {
+    text-align: left;
+    padding-left: 20px;
+}
+
+#footer-items > li:nth-child(2) {
+    text-align: center;
+}
+
+#footer-items > li:last-child {
+    text-align: right;
+    padding-right: 20px;
+}
+/* media queries to handle with different screen width */
+@media (max-width: 720px)
+{
+    #course-grid {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+    }
+    #course-item {
+        max-width: 100%;
+        grid-template-columns: 1fr 2fr;
+        flex-direction: column;
+        height: 100%;
+    }
+    nav, #footer-items {
+        max-width: 100%;
+        flex-direction: column;
+        font-size: 24px;
+        padding: 10px;
+    }
+    #footer-items > li {
+        text-align: center;
+        padding: 4px 0;
+    }
+    body {
+        background-color: lightblue;
+    }
+    p {
+        color: black;
+    }
+}
+@media (max-width: 360px)
+{
+        #course-grid {
+            grid-template-columns: 1fr;
+            max-width: 100%;
+        }
+
+        #course-item {
+            max-width: 100%;
+            grid-template-columns: 1fr 2fr;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        nav, #footer-items {
+            max-width: 100%;
+            flex-direction: column;
+            font-size: 24px;
+            padding: 10px;
+        }
+
+        #footer-items > li {
+            text-align: center;
+            padding: 4px 0;
+        }
+
+        body {
+            background-color: lightcoral;
+        }
+
+        p {
+            color: black;
+        }
+}

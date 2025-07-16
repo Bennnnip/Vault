@@ -1,0 +1,24 @@
+/*
+purpose = practiceing the flex box some of properties and go on the container
+ */
+header {
+    border: 2px green solid;
+}
+nav {
+    height: 100px;
+    display: flex;
+    flex-flow: row nowrap;
+    border: 2px blue solid;
+    justify-content: space-around;
+    align-items: center;
+}
+a {
+    border: 4px red solid;
+}
+#billinga{
+    order: 10;
+    align-self: stretch;
+}
+.profileA {
+    flex-grow: 1;
+}
